@@ -1,12 +1,13 @@
 "use client";
 
 import React, { ReactNode } from "react";
-import { Container, Sidebar, MainContent, SidebarContent } from "./styles";
-import { UserBox } from "./UserBox";
-import { SidebarMenu } from "./Menu";
+
+import { UserBox } from "../../components/UserBox";
 import Image from "next/image";
 import logo from "@/assets/login/logo.png";
 import { usePathname } from "next/navigation";
+import { Container, MainContent, Sidebar, SidebarContent } from "./styles";
+import { SidebarMenu } from "@/components/Menu";
 
 interface DashboardLayoutProps {
   children: ReactNode;

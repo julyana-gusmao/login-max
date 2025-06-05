@@ -1,17 +1,29 @@
 import styled from "styled-components";
 
-export const StyledButton = styled.button`
-  background-color: ${({ theme }) => theme.colors.primary};
+export const StyledButton = styled.button<{ width?: string }>`
+  background-color: ${({ theme }) => theme.colors.primary[100]};
+  border-radius: ${({ theme }) => theme.radius.lg};
+  font-size: ${({ theme }) => theme.fontSizes.base};
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  font-family: ${({ theme }) => theme.font.roboto};
   color: #fff;
   border: none;
-  border-radius: 24px;
-  padding: 12px 24px;
-  font-size: 14px;
-  font-weight: 500;
-  font-family: ${({ theme }) => theme.font.roboto};
+  padding: 0.6rem 1.5rem;
   transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+
+  width: ${({ width }) => width || "auto"};
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primaryDark};
+    background-color: ${({ theme }) => theme.colors.secondary};
   }
+`;
+
+export const IconWrapper = styled.span`
+  display: flex;
+  align-items: center;
 `;

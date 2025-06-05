@@ -1,10 +1,13 @@
 import styled, { css } from "styled-components";
+import { default as styledBase } from "styled-components";
 
 interface StyledButtonProps {
   border?: boolean;
 }
 
-export const StyledButton = styled.button<StyledButtonProps>`
+export const StyledButton = styledBase.button.withConfig({
+  shouldForwardProp: (prop) => prop !== "border", 
+})<StyledButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;

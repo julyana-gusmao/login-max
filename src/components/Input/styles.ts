@@ -42,3 +42,20 @@ export const EyeButton = styled.button`
     display: block;
   }
 `;
+
+export const DatePickerInput = styled.input`
+  width: 299px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 24px;
+  background-color: ${({ theme }) => theme.colors.inputBg};
+  color: ${({ theme }) => theme.colors.gray};
+  font-size: 12px;
+  font-family: ${({ theme }) => theme.font.roboto};
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.primary};
+  }
+`;

@@ -8,7 +8,8 @@ import { AuthProvider } from "../contexts/AuthContext";
 import { Poppins } from "next/font/google";
 import { Roboto } from "next/font/google";
 import ProtectedRoute from "@/components/ProtectedRoute";
-import { DashboardLayout } from "@/components/Dashboard";
+import { DashboardLayout } from "@/layouts/Dashboard";
+import "react-datepicker/dist/react-datepicker.css";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],

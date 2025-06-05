@@ -9,7 +9,7 @@ import {
   IconWrapper,
   MenuContainer,
   MenuTitle,
-} from "../styles";
+} from "./styles";
 
 import dashboardIcon from "@/assets/sidebar/menu/dashboard.png";
 import eventosIcon from "@/assets/sidebar/menu/eventos.png";
@@ -42,18 +42,16 @@ export function SidebarMenu() {
           const isActive = pathname === href;
 
           return (
-            <>
-              <MenuItem
-                key={label}
-                active={isActive}
-                onClick={() => router.push(href)}
-              >
-                <IconWrapper>
-                  <Image src={icon} alt={label} width={20} height={20} />
-                </IconWrapper>
-                {label}
-              </MenuItem>
-            </>
+            <MenuItem
+              key={label}
+              active={isActive}
+              onClick={() => router.push(href)}
+            >
+              <IconWrapper>
+                <Image src={icon} alt={label} width={20} height={20} />
+              </IconWrapper>
+              {label}
+            </MenuItem>
           );
         })}
       </Menu>

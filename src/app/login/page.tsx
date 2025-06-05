@@ -37,6 +37,11 @@ export default function LoginPage() {
     }
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleLogin();
+  };
+
   return (
     <Main>
       <Container>
@@ -47,22 +52,22 @@ export default function LoginPage() {
               <Title>Bem-vindo de volta</Title>
               <Subtitle>Entre com sua conta para acessar o painel.</Subtitle>
             </div>
-            <FormWrapper>
+            <FormWrapper as="form" onSubmit={handleSubmit}>
               <Input
                 label="E-mail"
                 placeholder="seunome@seuservidor.com"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               />
               <Input
                 label="Senha"
                 placeholder="Digite aqui"
                 type="password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               />
               {error && <p style={{ color: "red", fontSize: 12 }}>{error}</p>}
-              <Button onClick={handleLogin}>Enviar</Button>
+              <Button type="submit">Enviar</Button>
             </FormWrapper>
           </LeftContent>
 

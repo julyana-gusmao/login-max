@@ -1,12 +1,30 @@
 "use client";
 
-import { ButtonHTMLAttributes } from "react";
-import { StyledButton } from "./styles";
+import { ButtonHTMLAttributes, ReactNode } from "react";
+import { StyledButton, IconWrapper } from "./styles";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+  children: ReactNode;
+  icon?: ReactNode
+  iconPosition?: "left" | "right";
+  width?: string;
 }
 
-export const Button = ({ children, ...rest }: ButtonProps) => (
-  <StyledButton {...rest}>{children}</StyledButton>
-);
+export const Button = ({
+  children,
+  icon,
+  iconPosition = "left",
+  ...rest
+}: ButtonProps) => {
+  return (
+    <StyledButton {...rest}>
+      {icon && iconPosition === "left" && (
+        <IconWrapper>{icon}</IconWrapper>
+      )}
+      {children}
+      {icon && iconPosition === "right" && (
+        <IconWrapper>{icon}</IconWrapper>
+      )}
+    </StyledButton>
+  );
+};
