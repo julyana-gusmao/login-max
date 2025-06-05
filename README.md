@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Projeto Trilha Digital
 
-## Getting Started
+**Bem-vindo à minha versão do projeto!**  
 
-First, run the development server:
+🚨 *Por favor, leia o README até o final.*
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+✅ **Todos os requisitos solicitados atendidos:**
+- ✅ Next.js
+- ✅ Styled Components
+- ✅ Fluxo de login funcional (sem integração com API)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧪 Como testar
 
-## Learn More
+1 - Faça um clone do repositório  
+// `git clone https://github.com/julyana-gusmao/login-max.git`
 
-To learn more about Next.js, take a look at the following resources:
+2 - Instale as dependências  
+// `npm install`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3 - Rode o projeto no modo desenvolvedor  
+// `npm run dev`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4 - Acesse em seu navegador:  
+// `http://localhost:3000`
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👤 Usuário de teste
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Email | Senha   |
+|-------|---------|
+| admin | 123456  |
+
+---
+
+## ✨ Adicionais de features
+
+- ✨ Editar dados do usuário a partir do estado global de Auth
+- ✨ Classificação por nome, data e status
+- ✨ Barra de pesquisa funcional
+- ✨ Adicionar, editar ou excluir novos eventos
+- ✨ Paginação funcional
+
+---
+
+## 💬 Comentários adicionais
+
+- Reproduzi o projeto priorizando sempre a **reutilização de código**, **globalização do tema** e **arquitetura limpa**.
+- Sou uma desenvolvedora prática — acredito que **produtividade** e **execução excelente** caminham juntas.
+- Como o projeto não possui integração com API, optei por não centralizar o uso de bibliotecas robustas como **React Hook Form**, **Zod**, **React Testing Library** ou **useQuery**.  
+  No entanto, tenho **vasto conhecimento** em todas elas.
+- Espero que gostem, pois eu **adorei a experiência**. 💛
+
+---
+
+Feito por 💻 [Julyana Gusmão](https://github.com/julyana-gusmao)  
+📎 [LinkedIn Profile](https://www.linkedin.com/in/julyana-gusmao/)
