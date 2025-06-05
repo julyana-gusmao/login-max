@@ -13,6 +13,11 @@ export const ContentWrapper = styled.div`
   border-radius: ${({ theme }) => theme.radius.sm};
   padding: 1.6rem;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    align-items: stretch;
+  }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -38,9 +43,13 @@ export const Title = styled.h1`
 
 export const TableWrapper = styled.div`
   width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; 
   display: flex;
   justify-content: center;
+  max-width: 1370px;
 `;
+
 
 export const ControlsWrapper = styled.div`
   width: 100%;
@@ -58,5 +67,21 @@ export const ControlsWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+
+    .left,
+    .right {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .right {
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
   }
 `;

@@ -34,7 +34,7 @@ const Table: React.FC<TableProps> = ({ columns, data, onEdit, onDelete }) => {
   return (
     <TableWrapper>
       <TableHead>
-        <TableRow>
+        <TableRow isHeader>
           {columns.map((col, idx) => (
             <TableHeader key={col.key} isLast={idx === columns.length - 1}>
               {col.label}
@@ -50,11 +50,14 @@ const Table: React.FC<TableProps> = ({ columns, data, onEdit, onDelete }) => {
           return (
             <TableRow key={event.id}>
               {columns.map((col) => {
+                const label = col.label;
+
                 if (col.key === "actions") {
                   return (
                     <TableData
                       key={col.key}
                       isLast={true}
+                      data-label={label}
                       style={{ position: "relative" }}
                     >
                       <ActionButton
@@ -92,7 +95,7 @@ const Table: React.FC<TableProps> = ({ columns, data, onEdit, onDelete }) => {
                 if (col.key === "status") {
                   const isActive = Boolean(event[col.key]);
                   return (
-                    <TableData key={col.key}>
+                    <TableData key={col.key} data-label={label}>
                       <StatusIndicator active={isActive}>
                         {isActive ? "Ativo" : "Inativo"}
                       </StatusIndicator>
@@ -101,7 +104,9 @@ const Table: React.FC<TableProps> = ({ columns, data, onEdit, onDelete }) => {
                 }
 
                 return (
-                  <TableData key={col.key}>{String(event[col.key])}</TableData>
+                  <TableData key={col.key} data-label={label}>
+                    {String(event[col.key])}
+                  </TableData>
                 );
               })}
             </TableRow>

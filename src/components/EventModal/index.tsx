@@ -97,7 +97,10 @@ export default function EventModal({
             <Input
               label="Nome do Evento"
               name="nome"
+              type="string"
               value={nome}
+              maxLength={60}
+              min={1}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setNome(e.target.value)
               }
@@ -108,6 +111,9 @@ export default function EventModal({
               label="Total de Equipes"
               name="totalEquipes"
               value={totalEquipes}
+              type="number"
+              min={1}
+              max={100}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setTotalEquipes(e.target.value)
               }

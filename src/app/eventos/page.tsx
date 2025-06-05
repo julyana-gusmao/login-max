@@ -44,7 +44,14 @@ export default function EventosPage() {
   const closeModal = () => setModalState({ type: null, eventId: null });
 
   const handleAddEvent = (newEvent: any) => {
-    setEvents((prev) => [...prev, { ...newEvent, status: true }]);
+    setEvents((prev) => [
+      ...prev,
+      {
+        ...newEvent,
+        id: prev.length ? Math.max(...prev.map((e) => e.id)) + 1 : 1,
+        status: true,
+      },
+    ]);
     closeModal();
   };
 

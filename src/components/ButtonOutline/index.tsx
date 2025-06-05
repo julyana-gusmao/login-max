@@ -1,27 +1,23 @@
 "use client";
 
 import { ButtonHTMLAttributes, ReactNode } from "react";
-import { StyledButton, ContentWrapper } from "./styles";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
+import { StyledButton, ContentWrapper, IconWrapper } from "./styles";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  icon?: StaticImport;
+  icon?: ReactNode;
   border?: boolean;
 }
 
-export const ButtonOutline = ({ children, icon, border = false, ...rest }: ButtonProps) => (
+export const ButtonOutline = ({
+  children,
+  icon,
+  border = false,
+  ...rest
+}: ButtonProps) => (
   <StyledButton border={border} {...rest}>
     <ContentWrapper>
-      {icon && (
-        <Image
-          src={icon}
-          alt="Ícone"
-          width={18}
-          height={18}
-        />
-      )}
+      {icon && <IconWrapper>{icon}</IconWrapper>}
       <span>{children}</span>
     </ContentWrapper>
   </StyledButton>

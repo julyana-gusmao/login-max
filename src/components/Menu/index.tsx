@@ -23,6 +23,10 @@ interface MenuItemType {
   icon: StaticImport;
 }
 
+interface SidebarMenuProps {
+  isMobileOpen: boolean;
+}
+
 const menuItems: MenuItemType[] = [
   { label: "Dashboard", href: "#", icon: dashboardIcon },
   { label: "Eventos", href: "/eventos", icon: eventosIcon },
@@ -30,9 +34,12 @@ const menuItems: MenuItemType[] = [
   { label: "Inscrições", href: "#", icon: inscricoesIcon },
 ];
 
-export function SidebarMenu() {
+export function SidebarMenu({ isMobileOpen }: SidebarMenuProps) {
   const pathname = usePathname();
   const router = useRouter();
+
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+  if (!isMobileOpen && isMobile) return null;
 
   return (
     <MenuContainer>

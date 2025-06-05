@@ -7,6 +7,7 @@ export const Main = styled.main`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 20px;
 `;
 
 export const Container = styled.div`
@@ -17,6 +18,13 @@ export const Container = styled.div`
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    border-radius: 16px;
+  }
 `;
 
 export const Section = styled.div`
@@ -25,6 +33,10 @@ export const Section = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const LeftContent = styled.div`
@@ -35,12 +47,22 @@ export const LeftContent = styled.div`
   flex-direction: column;
   align-items: start;
   padding: 35px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 24px;
+    gap: 16px;
+  }
 `;
 
 export const RightContent = styled.div`
   width: 50%;
   height: 100%;
   position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const FormWrapper = styled.div`
@@ -53,12 +75,20 @@ export const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
   font-size: 26px;
   font-family: ${({ theme }) => theme.font.roboto};
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 export const Subtitle = styled.p`
   font-size: 13px;
   color: ${({ theme }) => theme.colors.gray};
   margin-top: 4px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 export const IllustrationWrapper = styled.div`

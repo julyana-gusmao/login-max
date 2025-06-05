@@ -42,3 +42,8 @@ export const ContentWrapper = styled.div`
   align-items: center;
   gap: 8px;
 `;
+
+export const IconWrapper = styled.span`
+  display: flex;
+  align-items: center;
+`;
